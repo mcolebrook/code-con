@@ -35,8 +35,6 @@ RUN apt update && \
     sudo \
 && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /var/run/dbus && \
-    sh -c 'echo "sudo dbus-daemon --system &> /dev/null" >> /home/${USERNAME}/.bashrc'
 
 # code-server
 RUN wget -q "https://github.com/cdr/code-server/releases/download/v${CODE_SERVER_VER}/code-server_${CODE_SERVER_VER}_amd64.deb" && \
@@ -46,6 +44,9 @@ RUN wget -q "https://github.com/cdr/code-server/releases/download/v${CODE_SERVER
 RUN groupadd -g $GID $USERNAME && \
     useradd -m -u $UID -g $GID -G root,staff $USERNAME -s /bin/bash -c 'code user' && \
     echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/nopasswd
+
+RUN mkdir -p /var/run/dbus && \
+    sh -c 'echo "sudo dbus-daemon --system &> /dev/null" >> /home/${USERNAME}/.bashrc'
 
 USER $USERNAME
 ENV HOME=/home/${USERNAME}
