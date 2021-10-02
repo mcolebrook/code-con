@@ -1,15 +1,19 @@
-FROM debian:stable-slim
+#FROM debian:stable-slim
+#FROM ubuntu:focal
+FROM ubuntu:bionic
 
 ARG CODE_SERVER_VER=3.12.0
+ARG DEBIAN_FRONTEND="noninteractive"
+ARG TIME_ZONE="Atlantic/Canary"
 ARG USERNAME=user
 ARG UID=1000
 ARG GID=1000
 
 LABEL authors="Marcos Colebrook"
-LABEL description="Container for VS Code and Code-Server with Development Tools"
+LABEL description="Container for VS Code and CDR code-server with Development Tools"
 
-RUN export DEBIAN_FRONTEND=noninteractive 
 WORKDIR /root
+ENV TZ=$TIME_ZONE
 
 # VS Code
 RUN apt update && \
@@ -23,6 +27,7 @@ RUN apt update && \
     apt-transport-https \
     build-essential \
     code \
+    dbus-x11 \
     gdb \
     libasound2 \
     libgl1-mesa-glx \
@@ -32,7 +37,6 @@ RUN apt update && \
     xnest \
     libxshmfence1 \
     openssh-client \
-    procps \
     sudo \
 && rm -rf /var/lib/apt/lists/*
 
@@ -47,9 +51,9 @@ RUN groupadd -g $GID $USERNAME && \
     echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/nopasswd
 
 USER $USERNAME
-ENV HOME=/home/${USERNAME}
+ENV HOME=/home/$USERNAME
 WORKDIR $HOME
-ENV PATH=${PATH}:${HOME}
+ENV PATH=$PATH:$HOME
 
 RUN sudo mkdir -p /var/run/dbus && \
     sh -c 'echo "sudo dbus-daemon --system &> /dev/null" >> ${HOME}/.bashrc'
