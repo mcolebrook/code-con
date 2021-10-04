@@ -27,6 +27,7 @@ RUN apt update && \
     apt-transport-https \
     build-essential \
     code \
+    dbus \
     dbus-x11 \
     gdb \
     libasound2 \
@@ -37,9 +38,10 @@ RUN apt update && \
     xnest \
     libxshmfence1 \
     openssh-client \
-    sudo \
-&& rm -rf /var/lib/apt/lists/*
-
+    sudo && \
+    apt autoremove -y && \
+    apt clean -y && \
+    rm -rf /var/lib/apt/lists/* 
 
 # code-server
 RUN wget -q "https://github.com/cdr/code-server/releases/download/v${CODE_SERVER_VER}/code-server_${CODE_SERVER_VER}_amd64.deb" && \
@@ -55,16 +57,16 @@ ENV HOME=/home/$USERNAME
 WORKDIR $HOME
 ENV PATH=$PATH:$HOME
 
-RUN sudo mkdir -p /var/run/dbus && \
-    sh -c 'echo "sudo dbus-daemon --system &> /dev/null" >> ${HOME}/.bashrc'
+#RUN sudo mkdir -p /var/run/dbus && \
+#    sh -c 'echo "sudo dbus-daemon --system &> /dev/null" >> ${HOME}/.bashrc'
 
 RUN mkdir -p $HOME/.local/share/code-server && \
 #    code --user-data-dir $HOME/.vscode/Code --extensions-dir $HOME/.vscode/extensions --install-extension ms-vscode.cpptools 
     #wget -q https://github.com/microsoft/vscode-cpptools/releases/download/1.6.0/cpptools-linux.vsix && \
     #code --user-data-dir $HOME/.vscode/Code --install-extension ms-vscode.cpptools-1.7.0-insiders2 && \
     #rm *.vsix && \
-    #mkdir -p .vscode/Code/User src && \
-    mkdir -p .config/Code/User .vscode src && \
+    mkdir -p .vscode/Code/User src && \
+    #mkdir -p .config/Code/User .vscode src && \
     #code --user-data-dir $HOME/.vscode/Code --install-extension ms-vscode.cpptools
     code --install-extension ms-vscode.cpptools
     # && \
