@@ -35,7 +35,6 @@ RUN apt update && \
     libgtk2.0-0 \
     libx11-dev \
     libx11-xcb1 \
-    #xnest \
     libxshmfence1 \
     openssh-client \
     sudo && \
@@ -60,18 +59,7 @@ ENV PATH=$PATH:$HOME
 RUN sudo mkdir -p /var/run/dbus && \
     sh -c 'echo "sudo dbus-daemon --system &> /dev/null" >> ${HOME}/.bashrc'
 
-#RUN mkdir -p $HOME/.local/share/code-server && \
-#    code --user-data-dir $HOME/.vscode/Code --extensions-dir $HOME/.vscode/extensions --install-extension ms-vscode.cpptools 
-    #wget -q https://github.com/microsoft/vscode-cpptools/releases/download/1.6.0/cpptools-linux.vsix && \
-    #code --user-data-dir $HOME/.vscode/Code --install-extension ms-vscode.cpptools-1.7.0-insiders2 && \
-    #rm *.vsix && \
-    #mkdir -p .vscode/Code/User src && \
-    #mkdir -p .config/Code/User .vscode src && \
-    #code --user-data-dir $HOME/.vscode/Code --install-extension ms-vscode.cpptools
-RUN   code --install-extension ms-vscode.cpptools
-    # && \
-    #sudo chown -R $USERNAME:$USERNAME $HOME/.vscode && \
-    #sudo chmod -R g+w .vscode
+RUN code --install-extension ms-vscode.cpptools
 
 COPY --chown=user:user *.sh ./
 COPY --chown=user:user vscode-config/*.json .vscode/
