@@ -52,18 +52,17 @@ RUN groupadd -g $GID $USERNAME && \
     useradd -m -u $UID -g $GID -G root,staff $USERNAME -s /bin/bash -c 'code user' && \
     echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/nopasswd
 
-RUN dbus-uuidgen > /var/lib/dbus/machine-id && \
-     mkdir -p /var/run/dbus && \
-     dbus-daemon --config-file=/usr/share/dbus-1/system.conf --print-address
+#RUN dbus-uuidgen > /var/lib/dbus/machine-id && \
+#    mkdir -p /var/run/dbus && \
+#    dbus-daemon --config-file=/usr/share/dbus-1/system.conf --print-address
 
 USER $USERNAME
 ENV HOME=/home/$USERNAME
 WORKDIR $HOME
 ENV PATH=$PATH:$HOME
 
-
-#RUN sudo mkdir -p /var/run/dbus && \
-    #sh -c 'echo "sudo dbus-daemon --system &> /dev/null" >> ${HOME}/.bashrc'
+RUN sudo mkdir -p /var/run/dbus && \
+    sh -c 'echo "sudo dbus-daemon --system &> /dev/null" >> ${HOME}/.bashrc'
 
 #RUN mkdir -p $HOME/.local/share/code-server && \
 #    code --user-data-dir $HOME/.vscode/Code --extensions-dir $HOME/.vscode/extensions --install-extension ms-vscode.cpptools 
