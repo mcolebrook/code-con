@@ -1,3 +1,4 @@
-{
-    "workbench.colorTheme": "Default Dark+"
-}
+bind-addr: 127.0.0.1:8080
+auth: password
+password: 15748470382324d4cb2a9336
+cert: false
