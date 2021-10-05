@@ -35,7 +35,7 @@ RUN apt update && \
     libgtk2.0-0 \
     libx11-dev \
     libx11-xcb1 \
-    xnest \
+    #xnest \
     libxshmfence1 \
     openssh-client \
     sudo && \
@@ -52,23 +52,28 @@ RUN groupadd -g $GID $USERNAME && \
     useradd -m -u $UID -g $GID -G root,staff $USERNAME -s /bin/bash -c 'code user' && \
     echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/nopasswd
 
+RUN dbus-uuidgen > /var/lib/dbus/machine-id && \
+     mkdir -p /var/run/dbus && \
+     dbus-daemon --config-file=/usr/share/dbus-1/system.conf --print-address
+
 USER $USERNAME
 ENV HOME=/home/$USERNAME
 WORKDIR $HOME
 ENV PATH=$PATH:$HOME
 
-#RUN sudo mkdir -p /var/run/dbus && \
-#    sh -c 'echo "sudo dbus-daemon --system &> /dev/null" >> ${HOME}/.bashrc'
 
-RUN mkdir -p $HOME/.local/share/code-server && \
+#RUN sudo mkdir -p /var/run/dbus && \
+    #sh -c 'echo "sudo dbus-daemon --system &> /dev/null" >> ${HOME}/.bashrc'
+
+#RUN mkdir -p $HOME/.local/share/code-server && \
 #    code --user-data-dir $HOME/.vscode/Code --extensions-dir $HOME/.vscode/extensions --install-extension ms-vscode.cpptools 
     #wget -q https://github.com/microsoft/vscode-cpptools/releases/download/1.6.0/cpptools-linux.vsix && \
     #code --user-data-dir $HOME/.vscode/Code --install-extension ms-vscode.cpptools-1.7.0-insiders2 && \
     #rm *.vsix && \
-    mkdir -p .vscode/Code/User src && \
+    #mkdir -p .vscode/Code/User src && \
     #mkdir -p .config/Code/User .vscode src && \
     #code --user-data-dir $HOME/.vscode/Code --install-extension ms-vscode.cpptools
-    code --install-extension ms-vscode.cpptools
+RUN   code --install-extension ms-vscode.cpptools
     # && \
     #sudo chown -R $USERNAME:$USERNAME $HOME/.vscode && \
     #sudo chmod -R g+w .vscode
