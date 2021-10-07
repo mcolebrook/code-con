@@ -54,16 +54,12 @@ ENV HOME=/home/$USERNAME
 WORKDIR $HOME
 ENV PATH=$PATH:$HOME/scripts
 
-RUN code --install-extension ms-vscode.cpptools && \
+RUN code --extensions-dir .config/Code/extensions --install-extension ms-vscode.cpptools && \
     mkdir -p .config/code-server .local/share/code-server/User
 
 COPY --chown=user:user scripts/*.sh scripts/
-#COPY --chown=user:user src/helloworld.cpp src/
-#COPY --chown=user:user vscode-config/argv.json src/.vscode/
-#COPY --chown=user:user vscode-config/c_cpp_properties.json src/.vscode/
-#COPY --chown=user:user vscode-config/launch.json src/.vscode/
-#COPY --chown=user:user vscode-config/tasks.json src/.vscode/
-#COPY --chown=user:user vscode-config/settings.json .config/Code/User/
+RUN chmod a+x scripts/*.sh
+
 
 RUN sudo mkdir -p /var/run/dbus && \
     sh -c 'echo "sudo dbus-daemon --system &> /dev/null" >> ${HOME}/.bashrc'
