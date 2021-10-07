@@ -1,5 +1,5 @@
 # code-con
 
 
-# Acknoledgements
+# Acknowledgements
 Poner referencia a proyecto UDIGEN como pide la ANEI
