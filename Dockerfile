@@ -57,7 +57,7 @@ ENV PATH=$PATH:$HOME/scripts
 RUN code --install-extension ms-vscode.cpptools && \
     mkdir -p .config/code-server .local/share/code-server/User
 
-COPY --chown=user:user *.sh scripts/
+COPY --chown=user:user scripts/*.sh scripts/
 #COPY --chown=user:user src/helloworld.cpp src/
 #COPY --chown=user:user vscode-config/argv.json src/.vscode/
 #COPY --chown=user:user vscode-config/c_cpp_properties.json src/.vscode/
