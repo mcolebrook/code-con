@@ -1,4 +1,4 @@
-*.md
 .git
-.code-server
-.vscode
+*.md
+*.cff
+src/helloworld

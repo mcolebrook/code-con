@@ -1,5 +1,3 @@
-#FROM debian:stable-slim
-#FROM ubuntu:focal
 FROM ubuntu:bionic
 
 ARG CODE_SERVER_VER=3.12.0
@@ -40,7 +38,7 @@ RUN apt update && \
     sudo && \
     apt autoremove -y && \
     apt clean -y && \
-    rm -rf /var/lib/apt/lists/* 
+    rm -rf /var/lib/apt/lists/*
 
 # code-server
 RUN wget -q "https://github.com/cdr/code-server/releases/download/v${CODE_SERVER_VER}/code-server_${CODE_SERVER_VER}_amd64.deb" && \
@@ -54,15 +52,23 @@ RUN groupadd -g $GID $USERNAME && \
 USER $USERNAME
 ENV HOME=/home/$USERNAME
 WORKDIR $HOME
-ENV PATH=$PATH:$HOME
+ENV PATH=$PATH:$HOME/scripts
+
+RUN code --install-extension ms-vscode.cpptools && \
+    mkdir -p .config/code-server .local/share/code-server/User
+
+COPY --chown=user:user *.sh scripts/
+#COPY --chown=user:user src/helloworld.cpp src/
+#COPY --chown=user:user vscode-config/argv.json src/.vscode/
+#COPY --chown=user:user vscode-config/c_cpp_properties.json src/.vscode/
+#COPY --chown=user:user vscode-config/launch.json src/.vscode/
+#COPY --chown=user:user vscode-config/tasks.json src/.vscode/
+#COPY --chown=user:user vscode-config/settings.json .config/Code/User/
 
 RUN sudo mkdir -p /var/run/dbus && \
     sh -c 'echo "sudo dbus-daemon --system &> /dev/null" >> ${HOME}/.bashrc'
+    #sudo chown -R $USERNAME:$USERNAME $HOME/.config/code-server
 
-RUN code --install-extension ms-vscode.cpptools
-
-COPY --chown=user:user *.sh ./
-COPY --chown=user:user vscode-config/*.json .vscode/
-COPY --chown=user:user src/helloworld.cpp src/
+WORKDIR $HOME/src
 
 #CMD [ "/bin/bash" ]

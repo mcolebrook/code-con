@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+abstract: "A Docker image of VS Code and CDR code-server"
+authors:
+  - family-names: Colebrook
+    given-names: Marcos
+    affiliation: "Depto. Ingeniería Informática y de Sistemas, Universidad de La Laguna, Tenerife, Spain"
+    orcid: https://orcid.org/https://orcid.org/0000-0003-3074-1697
+title: "code-con"
+version: 1.0
+doi: 
+date-released: 2021-10-10
+identifiers: 
+keywords: 
+license: 
+repository-code: "https://github.com/mcolebrook/code-con"
