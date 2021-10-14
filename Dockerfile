@@ -15,14 +15,11 @@ ENV TZ=$TIME_ZONE
 
 # VS Code
 RUN apt update && \
-    apt install -y wget gpg && \
-    wget -qO - https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && \
-    install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/ && \
-    sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list' && \
-    rm -f packages.microsoft.gpg && \
+    apt install -y wget software-properties-common apt-transport-https && \
+    wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | apt-key add - && \
+    add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" && \
     apt update && \
     apt install -y --no-install-recommends \
-    apt-transport-https \
     build-essential \
     code \
     dbus \
@@ -30,7 +27,6 @@ RUN apt update && \
     gdb \
     libasound2 \
     libgl1-mesa-glx \
-    libgtk2.0-0 \
     libx11-dev \
     libx11-xcb1 \
     libxshmfence1 \
