@@ -8,7 +8,7 @@ ARG UID=1000
 ARG GID=1000
 
 LABEL authors="Marcos Colebrook"
-LABEL description="Container for VS Code and CDR code-server with Development Tools"
+LABEL description="Container image for VS Code and CDR code-server with Development Tools"
 
 WORKDIR /root
 ENV TZ=$TIME_ZONE
