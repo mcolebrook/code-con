@@ -56,7 +56,7 @@ RUN code --extensions-dir .config/Code/extensions --install-extension ms-vscode.
     mkdir -p .config/code-server .local/share/code-server/User && \
     chmod a+x scripts/*.sh && \
     sudo mkdir -p /var/run/dbus && \
-    sh -c 'echo "sudo dbus-daemon --system &> /dev/null" >> ${HOME}/.bashrc'
+    sh -c 'echo "sudo /etc/init.d/dbus start &> /dev/null" >> ${HOME}/.bashrc'
 
 WORKDIR $HOME/src
 
