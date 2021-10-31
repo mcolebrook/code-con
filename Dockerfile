@@ -52,7 +52,7 @@ ENV PATH=$PATH:$HOME/scripts
 
 COPY --chown=user:user scripts/*.sh scripts/
 
-RUN code --extensions-dir .config/Code/extensions --install-extension ms-vscode.cpptools && \
+RUN dbus-launch code --extensions-dir .config/Code/extensions --install-extension ms-vscode.cpptools && \
     mkdir -p .config/code-server .local/share/code-server/User && \
     chmod a+x scripts/*.sh && \
     sudo mkdir -p /var/run/dbus && \
