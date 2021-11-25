@@ -12,13 +12,10 @@
 
 ```
 @software{Colebrook_code-con_2021,
-author = {Colebrook, Marcos},
-license = {MIT},
-month = {10},
 title = {{code-con: a Docker image of VS Code and CDR code-server}},
-url = {https://github.com/mcolebrook/code-con},
-version = {1.0},
+author = {Colebrook, Marcos},
 year = {2021}
+url = {https://github.com/mcolebrook/code-con}
 }
 ```
 
