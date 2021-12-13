@@ -8,6 +8,10 @@
 |     Code    | Full IDE with extensions |             Desktop app            |
 | code-server | Web app                  | Cannot install MS extensions (TOS) |
 
+## Uses
+- Headless server: run app with X in a remote server.
+- Reproducible science: pack all the tools needed for a experiment along with the IDE.
+
 ## Cite as
 
 ```
