@@ -6,7 +6,7 @@
 |     App     |           Pros           |                Cons                |
 |:-----------:|:------------------------:|:----------------------------------:|
 |     Code    | Full IDE with extensions |             Desktop app            |
-| code-server | Web app                  | Cannot install MS extensions (TOS) |
+| code-server |          Web app         | Cannot install MS extensions (TOS) |
 
 ## Uses
 - Headless server: run app with X in a remote server.
