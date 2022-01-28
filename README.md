@@ -24,5 +24,5 @@ url = {https://github.com/mcolebrook/code-con}
 ```
 
 ## Acknowledgements
-This work has been developed within project UDIGEN, grant RTC-2017-6471-1 funded by MCIN/AEI/10.13039/501100011033 and by “ERDF A way of making Europe”
+This work has been developed within project UDIGEN, grant RTC-2017-6471-1 funded by MCIN/AEI/10.13039/501100011033 and by “ERDF A way of making Europe”.
 ![MCIN/AEI/ERDF](_figures/MCIN_AEI.jpg)
