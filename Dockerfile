@@ -15,7 +15,7 @@ WORKDIR /root
 ENV TZ=$TIME_ZONE \
     DBUS_SESSION_BUS_ADDRESS="autolaunch:" \
     TEMP=/tmp 
-#    LANG="en_US.UTF-8" \
+#   LANG="en_US.UTF-8" \
 #	LANGUAGE="en_US.UTF-8"
 
 # VS Code
