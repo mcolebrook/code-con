@@ -35,12 +35,12 @@ docker build -t mcolebrook/code-con .
 
 ### Windows
 
-> Note: we are considering that you cloned the project in `c:\temp`. If not, please change the directory accordingly:
+> Note: we are considering that you cloned the project in `c:\temp`. If not, please change the directory accordingly. Please, remember to put the right **IP address**.
 
 ```
 docker run --rm -it --name code-con --hostname linux \
 --cap-add=SYS_ADMIN \
--p 8080:8080 -e DISPLAY=10.209.2.224:0.0  \
+-p 8080:8080 -e DISPLAY=_PUT_HERE_YOUR_IP_:0.0  \
 --mount type=bind,source=/c/temp/code-con/github/settings/vscode-settings.json,target=/home/user/.config/Code/User/settings.json \
 --mount type=bind,source=/c/temp/code-con/github/settings/code-server-settings.json,target=/home/user/.local/share/code-server/User/settings.json \
 -v /c/temp/docker/code-con/github/src:/home/user/src \
@@ -50,7 +50,7 @@ mcolebrook/code-con
 
 ### Mac
 
-> Note: we are considering that you cloned the project in `\tmp`. If not, please change the directory accordingly:
+> Note: we are considering that you cloned the project in `\tmp`. If not, please change the directory accordingly.
 
 ```
 $ xhost +
