@@ -76,6 +76,10 @@ vscode.sh
 code-server.sh
 ```
 
+Then, go to the browser and type: <YOUR_IP>:8080.
+
+> Note: If you are under Windows 8.x, get the right IP using: `docker-machine ip`
+
 ## Screenshots
 
 - Visual Studio Code debugging `helloworld`

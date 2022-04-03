@@ -6,7 +6,8 @@ ARG TIME_ZONE="Atlantic/Canary"
 ARG USERNAME=user
 ARG UID=1000
 ARG GID=1000
-ARG CODE_SERVER_VER=3.12.0
+#ARG CODE_SERVER_VER=3.12.0
+ARG CODE_SERVER_VER=4.2.0
 
 LABEL authors="Marcos Colebrook" 
 LABEL description="Container image for VS Code and CDR code-server with Development Tools"
