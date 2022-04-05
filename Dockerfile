@@ -31,9 +31,11 @@ RUN apt update \
         dbus \
         dbus-x11 \
         gdb \
+        gnome-keyring \
         iproute2 \
         libasound2 \
         libatk-bridge2.0-0 \
+        libcurl4 \
         libfuse2 \
         libgconf-2-4 \
         libgdk-pixbuf2.0-0 \
