@@ -53,8 +53,11 @@ mcolebrook/code-con
 > Note: we are considering that you cloned the project in `\tmp`. If not, please change the directory accordingly.
 
 ```
-$ xhost +
-$ docker run --rm -it --name code-con --hostname linux \
+xhost +
+```
+
+```
+docker run --rm -it --name code-con --hostname linux \
 --cap-add=SYS_ADMIN \
 -p 8080:8080 -e DISPLAY=host.docker.internal:0.0  \
 -v /tmp/code-con/github/src:/home/user/src \
