@@ -35,6 +35,8 @@ cd code-con
 docker build -t mcolebrook/code-con .
 ```
 
+Or just invoke the image from the Docker Hub in the following section.
+
 
 ## Starting up the image
 
@@ -117,7 +119,7 @@ This project has been developed thanks to previous work done by: [Binal Patel (@
 ## References
 [1] Mamykin K, [How to run dockerized X Windows apps on macOS](http://mamykin.com/posts/running-x-apps-on-mac-with-docker/).
 
-[2] Docker, [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).
+[2] Docker Inc., [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).
 
 [3] Vass T (2019), [Intro Guide to Dockerfile Best Practices](https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices/).
 
