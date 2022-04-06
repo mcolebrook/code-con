@@ -10,7 +10,10 @@
 | code-server |          Web app         | Cannot install MS extensions (violates Term-of-Service, TOS) |
 |:-----------:|:------------------------:|:------------------------------------------------------------:|
 
+The VS Code image has the C/C++ extension already installed.
+
 ## Uses
+
 - Headless server: run app with X in a remote server.
 - Reproducible science: pack all the tools needed for a experiment along with the IDE in order to re-run it.
 
@@ -37,12 +40,12 @@ docker build -t mcolebrook/code-con .
 
 ### Windows
 
-> Note: we are considering that you cloned the project in `c:\temp`. If not, please change the directory accordingly. Please, remember to put the right **IP address**.
+> Note: we consider that you cloned the project is located within `c:\temp`. If not, please change directory accordingly. Please, remember to put the right **IP address** (fill in the `DISPLAY` option).
 
 ```
 docker run --rm -it --name code-con --hostname linux \
 --cap-add=SYS_ADMIN \
--p 8080:8080 -e DISPLAY=_PUT_HERE_YOUR_IP_:0.0  \
+-p 8080:8080 -e DISPLAY=___.___.___.___:0.0  \
 --mount type=bind,source=/c/temp/code-con/github/settings/vscode-settings.json,target=/home/user/.config/Code/User/settings.json \
 --mount type=bind,source=/c/temp/code-con/github/settings/code-server-settings.json,target=/home/user/.local/share/code-server/User/settings.json \
 -v /c/temp/docker/code-con/github/src:/home/user/src \
@@ -52,7 +55,7 @@ mcolebrook/code-con
 
 ### Mac
 
-> Note: we are considering that you cloned the project in `\tmp`. If not, please change the directory accordingly.
+> Note: we consider that you cloned the project is located within `\tmp`. If not, please change directory accordingly.
 
 ```
 xhost +
@@ -68,6 +71,7 @@ docker run --rm -it --name code-con --hostname linux \
 mcolebrook/code-con
 ```
 
+If you get any trouble, please refer to the following blog [1](http://mamykin.com/posts/running-x-apps-on-mac-with-docker/).
 
 ## Running Visual Studio Code
 
@@ -81,15 +85,17 @@ vscode.sh
 code-server.sh
 ```
 
-Then, go to the browser and type: <YOUR_IP>:8080.
+Then, go to the browser and type: `<YOUR IP ADDRESS>:8080`
 
-> Note: If you are under Windows 8.x, get the right IP using: `docker-machine ip`
+> Note: If you are under Windows 8.x, get the right IP address using: `docker-machine ip`
 
 ## Screenshots
 
-- Visual Studio Code debugging `helloworld`
+- VS Code debugging `helloworld` in Windows.
+![VS Code debugging in Windows](_figures/vscode_debugging_windows.jpg)
 
-- code-server running `helloworld`
+- code-server running `helloworld` in Mac
+![VS Code running in Mac](_figures/vscode_running_mac.jpg)
 
 ## Cite as
 
@@ -106,4 +112,15 @@ url = {https://github.com/mcolebrook/code-con}
 This work has been developed within project UDIGEN, grant RTC-2017-6471-1 funded by MCIN/AEI/10.13039/501100011033 and by “ERDF A way of making Europe”.
 ![MCIN/AEI/ERDF](_figures/MCIN_AEI.jpg)
 
-Refer to all previous projects... (see webpages and Githubs)
+This project has been developed thanks to previous work done by: [Binal Patel (@caesarnine)](https://github.com/caesarnine/data-science-docker-vscode-template), [Jess Frazelle (@jessfraz)](https://github.com/jessfraz/dockerfiles/tree/master/vscode), [Christopher Miles (cmiles74)](https://github.com/cmiles74/docker-vscode), [Coder](https://github.com/coder/code-server).
+
+## References
+[1] Mamykin K, [How to run dockerized X Windows apps on macOS](http://mamykin.com/posts/running-x-apps-on-mac-with-docker/).
+
+[2] Docker, [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).
+
+[3] Vass T (2019), [Intro Guide to Dockerfile Best Practices](https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices/).
+
+[4] Noring C (2019), [Improve your Dockerfile, best practices](https://dev.to/azure/improve-your-dockerfile-best-practices-5ll).
+
+[5] Nüst D, Sochat V, Marwick B, Eglen SJ, Head T, Hirst T, Evans BD (2020), [Ten simple rules for writing Dockerfiles for reproducible data science](https://doi.org/10.1371/journal.pcbi.1008316), PLOS Computational Biology 16(11): e1008316.
