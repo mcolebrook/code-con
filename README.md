@@ -1,27 +1,38 @@
 # code-con
-> A Docker container image for VS Code and CDR code-server
+> A Docker container image for [MS Visual Studio Code](https://code.visualstudio.com/) and [CDR code-server](https://github.com/coder/code-server).
 
 ## Motivation
 
-|     App     |           Pros           |                            Cons                              |
-|:-----------:|:------------------------:|:------------------------------------------------------------:|
-|     Code    | Full IDE with extensions |                         Desktop app                          |
-| code-server |          Web app         | Cannot install MS extensions (violates Term-of-Service, TOS) |
-
-The VS Code image has the C/C++ extension already installed.
+|     App     |           Pros           |                                           Cons                                                                             |
+|:-----------:|:------------------------:|:--------------------------------------------------------------------------------------------------------------------------:|
+|   VS Code   | Full IDE with extensions |                                       Desktop app                                                                          |
+| code-server |          Web app         | Installing MS extensions violates Term-of-Use [ToU](https://marketplace.visualstudio.com/items/ms-vscode.cpptools/license) |
 
 ## Uses
 
 - Headless server: run app with X in a remote server.
-- Reproducible science: pack all the tools needed for a experiment along with the IDE in order to re-run it.
+- Reproducible science: pack all tools and data needed for a experiment along with the IDE in order to re-run it or do a step-by-step run.
+- Distribute a full IDE version with all the components (compiler, debugger, extensiones, etc) already installed.
+
+> **Word of caution**: this image is intended as a Proof of Concept (PoC) for educational purposes.
 
 ## Prerequisites
 
 - Docker
-- Windows: install MobaXterm to run the X11 server
+- Windows: install [MobaXterm](https://mobaxterm.mobatek.net/download.html) to run the X11 server
 - Mac: install XQuartz
-- Terminal: you may use MobaXterm or any other app
+- Terminal: you may use [MobaXterm](https://mobaxterm.mobatek.net/download.html) or any other app
 
+## Software and versions
+
+As of April 2022, the image comes with the following software installed:
+
+|   Software apps or packages                                | Version                                                           |
+|:----------------------------------------------------------:|:------------------------------------------------------------------|
+| VS Code                                                    | [1.66](https://github.com/microsoft/vscode/releases/tag/1.66.0)   |
+| code-server                                                | [4.2.0](https://github.com/coder/code-server/releases/tag/v4.2.0) |
+| build-essential                                            | 12.4                                                              |
+| C/C++ IntelliSense, debugging, and code browsing extension | 1.9.7                                                             |
 
 ## Install & build up
 
@@ -94,8 +105,10 @@ Then, go to the browser and type: `<YOUR IP ADDRESS>:8080`
 - VS Code debugging `helloworld` in Windows.
 ![VS Code debugging in Windows](_figures/vscode_debugging_windows.jpg)
 
+<!--
 - code-server running `helloworld` in Mac
 ![VS Code running in Mac](_figures/vscode_running_mac.jpg)
+-->
 
 ## Cite as
 
