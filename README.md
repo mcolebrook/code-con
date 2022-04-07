@@ -6,15 +6,15 @@
 |     App     |           Pros           |                                           Cons                                                                             |
 |:-----------:|:------------------------:|:--------------------------------------------------------------------------------------------------------------------------:|
 |   VS Code   | Full IDE with extensions |                                       Desktop app                                                                          |
-| code-server |          Web app         | Installing MS extensions violates Term-of-Use [ToU](https://marketplace.visualstudio.com/items/ms-vscode.cpptools/license) |
+| code-server |          Web app         | Installing MS extensions violates Term-of-Use ([ToU])(https://marketplace.visualstudio.com/items/ms-vscode.cpptools/license) |
 
 ## Uses
 
 - Headless server: run app with X in a remote server.
-- Reproducible science: pack all tools and data needed for a experiment along with the IDE in order to re-run it or do a step-by-step run.
+- Reproducible science: pack all tools and data needed for a experiment along with the IDE in order to re-run it or do a step-by-step execution.
 - Distribute a full IDE version with all the components (compiler, debugger, extensiones, etc) already installed.
 
-> **Word of caution**: this image is intended as a Proof of Concept (PoC) for educational purposes.
+> **Word of caution**: this image is intended as a Proof-of-Concept (PoC) for educational purposes.
 
 ## Prerequisites
 
@@ -27,12 +27,12 @@
 
 As of April 2022, the image comes with the following software installed:
 
-|   Software apps or packages                                | Version                                                           |
-|:----------------------------------------------------------:|:------------------------------------------------------------------|
-| VS Code                                                    | [1.66](https://github.com/microsoft/vscode/releases/tag/1.66.0)   |
-| code-server                                                | [4.2.0](https://github.com/coder/code-server/releases/tag/v4.2.0) |
-| build-essential                                            | 12.4                                                              |
-| C/C++ IntelliSense, debugging, and code browsing extension | 1.9.7                                                             |
+|   Software apps or packages                                | Version                                                                         |
+|:----------------------------------------------------------:|:--------------------------------------------------------------------------------|
+| VS Code                                                    | [1.66](https://github.com/microsoft/vscode/releases/tag/1.66.0)                 |
+| code-server                                                | [4.2.0](https://github.com/coder/code-server/releases/tag/v4.2.0)               |
+| build-essential                                            | 12.4                                                                            |
+| C/C++ IntelliSense, debugging, and code browsing extension | [1.9.7](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) |
 
 ## Install & build up
 
@@ -82,7 +82,7 @@ docker run --rm -it --name code-con --hostname linux \
 mcolebrook/code-con
 ```
 
-If you get any trouble, please refer to the following blog [1](http://mamykin.com/posts/running-x-apps-on-mac-with-docker/).
+If you get any trouble, please refer to the following blog [[1](http://mamykin.com/posts/running-x-apps-on-mac-with-docker/)].
 
 ## Running Visual Studio Code
 
@@ -103,6 +103,7 @@ Then, go to the browser and type: `<YOUR IP ADDRESS>:8080`
 ## Screenshots
 
 - VS Code debugging `helloworld` in Windows.
+
 ![VS Code debugging in Windows](_figures/vscode_debugging_windows.jpg)
 
 <!--
