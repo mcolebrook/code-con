@@ -6,7 +6,7 @@
 |     App     |           Pros           |                                           Cons                                                                             |
 |:-----------:|:------------------------:|:--------------------------------------------------------------------------------------------------------------------------:|
 |   VS Code   | Full IDE with extensions |                                       Desktop app                                                                          |
-| code-server |          Web app         | Installing MS extensions violates Term-of-Use ([ToU])(https://marketplace.visualstudio.com/items/ms-vscode.cpptools/license) |
+| code-server |          Web app         | Installing MS extensions violates Term-of-Use ([ToU](https://marketplace.visualstudio.com/items/ms-vscode.cpptools/license)) |
 
 ## Uses
 
