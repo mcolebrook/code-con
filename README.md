@@ -3,12 +3,10 @@
 
 ## Motivation
 
-|:-----------:|:------------------------:|:------------------------------------------------------------:|
 |     App     |           Pros           |                            Cons                              |
 |:-----------:|:------------------------:|:------------------------------------------------------------:|
 |     Code    | Full IDE with extensions |                         Desktop app                          |
 | code-server |          Web app         | Cannot install MS extensions (violates Term-of-Service, TOS) |
-|:-----------:|:------------------------:|:------------------------------------------------------------:|
 
 The VS Code image has the C/C++ extension already installed.
 
@@ -114,7 +112,7 @@ url = {https://github.com/mcolebrook/code-con}
 This work has been developed within project UDIGEN, grant RTC-2017-6471-1 funded by MCIN/AEI/10.13039/501100011033 and by “ERDF A way of making Europe”.
 ![MCIN/AEI/ERDF](_figures/MCIN_AEI.jpg)
 
-This project has been developed thanks to previous work done by: [Binal Patel (@caesarnine)](https://github.com/caesarnine/data-science-docker-vscode-template), [Jess Frazelle (@jessfraz)](https://github.com/jessfraz/dockerfiles/tree/master/vscode), [Christopher Miles (cmiles74)](https://github.com/cmiles74/docker-vscode), [Coder](https://github.com/coder/code-server).
+This project has been developed thanks to previous work done by: [Binal Patel (@caesarnine)](https://github.com/caesarnine/data-science-docker-vscode-template), [Jess Frazelle (@jessfraz)](https://github.com/jessfraz/dockerfiles/tree/master/vscode), [Christopher Miles (cmiles74)](https://github.com/cmiles74/docker-vscode), [Coder](https://github.com/coder/code-server), [Microsoft](https://github.com/microsoft/vscode-linux-build-agent).
 
 ## References
 [1] Mamykin K, [How to run dockerized X Windows apps on macOS](http://mamykin.com/posts/running-x-apps-on-mac-with-docker/).
