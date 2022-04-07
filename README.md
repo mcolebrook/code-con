@@ -41,11 +41,10 @@ Move to a specific folder/directory, for instance `c:\temp` in Windows or `\tmp`
 ```
 git clone http://github.com/mcolebrook/code-con
 cd code-con
-docker build -t mcolebrook/code-con .
+docker build -t code-con .
 ```
 
-Or just invoke the image from the Docker Hub in the following section.
-
+Or just invoke image `mcolebrook/code-con` from [Docker Hub](https://hub.docker.com/repository/docker/mcolebrook/code-con) in the following section.
 
 ## Starting up the image
 
