@@ -32,7 +32,7 @@ As of April 2022, the image comes with the following software installed:
 |:----------------------------------------------------------:|:--------------------------------------------------------------------------------|
 | VS Code                                                    |        [1.66](https://github.com/microsoft/vscode/releases/tag/1.66.0)          |
 | code-server                                                |       [4.2.0](https://github.com/coder/code-server/releases/tag/v4.2.0)         |
-| build-essential                                            |                                   12.4                                          |
+| `build-essential` (`gcc`, `g++`, `make`)                   |                                   12.4                                          |
 | C/C++ IntelliSense, debugging, and code browsing extension | [1.9.7](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) |
 
 ## Install & build up
