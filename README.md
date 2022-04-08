@@ -12,7 +12,8 @@
 
 - Headless server: run app with X in a remote server.
 - Reproducible science: pack all tools and data needed for a experiment along with the IDE in order to re-run it or do a step-by-step execution.
-- Distribute a full IDE version with all the components (compiler, debugger, extensiones, etc) already installed.
+- Edit, compile and run any source code with just attaching the folder to a Docker volume.
+- Distribute a full IDE version with all components (compiler, debugger, extensiones, etc) already installed.
 
 > **Word of caution**: this image is intended as a Proof-of-Concept (PoC) for educational purposes.
 
@@ -27,11 +28,11 @@
 
 As of April 2022, the image comes with the following software installed:
 
-|   Software apps or packages                                | Version                                                                         |
+| Software apps or packages                                  | Version                                                                         |
 |:----------------------------------------------------------:|:--------------------------------------------------------------------------------|
-| VS Code                                                    | [1.66](https://github.com/microsoft/vscode/releases/tag/1.66.0)                 |
-| code-server                                                | [4.2.0](https://github.com/coder/code-server/releases/tag/v4.2.0)               |
-| build-essential                                            | 12.4                                                                            |
+| VS Code                                                    |        [1.66](https://github.com/microsoft/vscode/releases/tag/1.66.0)          |
+| code-server                                                |       [4.2.0](https://github.com/coder/code-server/releases/tag/v4.2.0)         |
+| build-essential                                            |                                   12.4                                          |
 | C/C++ IntelliSense, debugging, and code browsing extension | [1.9.7](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) |
 
 ## Install & build up
