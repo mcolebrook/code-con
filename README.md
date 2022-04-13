@@ -97,7 +97,7 @@ vscode.sh
 code-server.sh
 ```
 
-Then, go to the browser and type: `<YOUR IP ADDRESS>:8080`
+Then, go to the browser and type: `<YOUR IP ADDRESS>:8080` (Windows) or `localhost:8080`(Mac)
 
 > Note: If you are under Windows 8.x, get the right IP address using: `docker-machine ip`
 
