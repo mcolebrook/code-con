@@ -107,10 +107,9 @@ Then, go to the browser and type: `<YOUR IP ADDRESS>:8080` (Windows) or `localho
 
 ![VS Code debugging in Windows](_figures/vscode_debugging_windows.jpg)
 
-<!--
 - code-server running `helloworld` in Mac
-![VS Code running in Mac](_figures/vscode_running_mac.jpg)
--->
+
+![VS Code running in Mac](_figures/code-server_running_mac.png)
 
 ## Cite as
 
