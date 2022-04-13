@@ -94,5 +94,5 @@ RUN code --extensions-dir .config/Code/extensions --install-extension ms-vscode.
 
 WORKDIR $HOME/src
 
-ENTRYPOINT ["/usr/local/share/init-dbus.sh export $(dbus-launch); export NSS_USE_SHARED_DB=ENABLED"]
+ENTRYPOINT [ "/usr/local/share/init-dbus.sh export $(dbus-launch); export NSS_USE_SHARED_DB=ENABLED" ]
 CMD [ "/bin/bash" ]
