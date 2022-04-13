@@ -103,7 +103,7 @@ Then, go to the browser and type: `<YOUR IP ADDRESS>:8080` (Windows) or `localho
 
 ## Screenshots
 
-- VS Code debugging `helloworld` in Windows.
+- VS Code debugging `helloworld` in Windows
 
 ![VS Code debugging in Windows](_figures/vscode_debugging_windows.jpg)
 
