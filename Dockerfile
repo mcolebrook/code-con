@@ -84,15 +84,12 @@ ENV PATH=$PATH:$HOME/scripts
 
 COPY --chown=user:user scripts/*.sh scripts/
 
-#RUN dbus-launch code --extensions-dir .config/Code/extensions --install-extension ms-vscode.cpptools && \
 RUN code --extensions-dir .config/Code/extensions --install-extension ms-vscode.cpptools \
     && mkdir -p .config/code-server .local/share/code-server/User \
-    && chmod a+x scripts/*.sh 
-    #\
-#    && sudo mkdir -p /var/run/dbus \
-#    && sh -c 'echo "sudo /etc/init.d/dbus start &> /dev/null" >> ${HOME}/.bashrc'
+    && chmod a+x scripts/*.sh \
+    && sh -c 'echo "export "$(dbus-launch)"; export NSS_USE_SHARED_DB=ENABLED" >> /home/${USERNAME}/.bashrc' 
 
 WORKDIR $HOME/src
 
-ENTRYPOINT [ "/usr/local/share/init-dbus.sh export $(dbus-launch); export NSS_USE_SHARED_DB=ENABLED" ]
+ENTRYPOINT [ "/usr/local/share/init-dbus.sh" ]
 CMD [ "/bin/bash" ]

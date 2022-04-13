@@ -32,27 +32,27 @@ keepRunningInBackground()
 # Use sudo to run as root when required
 sudoIf()
 {
-    if [ "$(id -u)" -ne 0 ]; then
-        sudo "$@"
-    else
-        "$@"
-    fi
+  if [ "$(id -u)" -ne 0 ]; then
+      sudo "$@"
+  else
+      "$@"
+  fi
 }
 
 # Use sudo to run as non-root user if not already running
 sudoUserIf()
 {
-    if [ "$(id -u)" -eq 0 ]; then
-        sudo -u ${NONROOT_USER} "$@"
-    else
-        "$@"
-    fi
+  if [ "$(id -u)" -eq 0 ]; then
+    sudo -u ${NONROOT_USER} "$@"
+  else
+    "$@"
+  fi
 }
 
 # Log messages
 log()
 {
-    echo -e "[$(date)] $@" | sudoIf tee -a $LOG > /dev/null
+  echo -e "[$(date)] $@" | sudoIf tee -a $LOG > /dev/null
 }
 
 log "** SCRIPT START **"
@@ -64,7 +64,7 @@ if [ -f "/var/run/dbus/pid" ] && ! pidof dbus-daemon  > /dev/null; then
 fi
 sudoIf /etc/init.d/dbus start 2>&1 | sudoIf tee -a /tmp/dbus-daemon-system.log > /dev/null
 while ! pidof dbus-daemon > /dev/null; do
-	sleep 1
+  sleep 1
 done
 
 # Set up Xvfb.
