@@ -14,7 +14,7 @@ LABEL description="Container image for VS Code and CDR code-server with Developm
 
 WORKDIR /root
 ENV TZ=$TIME_ZONE \
-    DBUS_SESSION_BUS_ADDRESS="autolaunch:" \
+#   DBUS_SESSION_BUS_ADDRESS="autolaunch:" \
     TEMP=/tmp 
 #   LANG="en_US.UTF-8" \
 #	LANGUAGE="en_US.UTF-8"
@@ -87,7 +87,9 @@ COPY --chown=user:user scripts/*.sh scripts/
 RUN code --extensions-dir .config/Code/extensions --install-extension ms-vscode.cpptools \
     && mkdir -p .config/code-server .local/share/code-server/User \
     && chmod a+x scripts/*.sh \
-    && sh -c 'echo "export "$(dbus-launch)"; export NSS_USE_SHARED_DB=ENABLED" >> /home/${USERNAME}/.bashrc' 
+    && sh -c 'echo "eval \`dbus-launch --auto-syntax\`" >> /home/${USERNAME}/.bashrc' 
+    #&& sh -c 'echo "export $(dbus-launch)" >> /home/${USERNAME}/.bashrc' 
+    #&& sh -c 'echo "export "$(dbus-launch)"; export NSS_USE_SHARED_DB=ENABLED" >> /home/${USERNAME}/.bashrc' 
 
 WORKDIR $HOME/src
 
