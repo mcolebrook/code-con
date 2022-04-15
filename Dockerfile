@@ -14,8 +14,8 @@ LABEL description="Container image for VS Code and CDR code-server with Developm
 
 WORKDIR /root
 ENV TZ=$TIME_ZONE \
-#   DBUS_SESSION_BUS_ADDRESS="autolaunch:" \
     TEMP=/tmp 
+#   DBUS_SESSION_BUS_ADDRESS="autolaunch:" \
 #   LANG="en_US.UTF-8" \
 #	LANGUAGE="en_US.UTF-8"
 
