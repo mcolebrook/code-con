@@ -15,6 +15,7 @@
 - Edit, compile and run any source code with just attaching the folder to a Docker volume.
 - Distribute a full IDE version with all components (compiler, debugger, extensiones, etc) already installed.
 - Change some packages installed in this image in order to switch to other languages (Python, R, Javascript, etc).
+- In Windows, you may want to run, test or debug your app against Linux libraries without using WSL.
 
 > **Word of caution**: this image is intended as a Proof-of-Concept (PoC) for educational purposes.
 
