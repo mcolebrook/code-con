@@ -17,13 +17,13 @@
 - Change some packages installed in this image in order to switch to other languages (Python, R, Javascript, etc).
 - In Windows, you may want to run, test or debug your app against Linux libraries without using WSL.
 
-> **Word of caution**: this image is intended as a Proof-of-Concept (PoC) for educational purposes.
+> **Word of caution**: this image is intended as a Proof-of-Concept (PoC) for educational purposes only.
 
 ## Prerequisites
 
 - Docker
 - Windows: install [MobaXterm](https://mobaxterm.mobatek.net/download.html) to run the X11 server
-- Mac: install XQuartz
+- Mac: install [XQuartz](https://www.xquartz.org)
 - Terminal: you may use [MobaXterm](https://mobaxterm.mobatek.net/download.html) or any other app
 
 ## Software and versions
