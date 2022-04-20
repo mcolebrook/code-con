@@ -61,7 +61,7 @@ docker run --rm -it --name code-con --hostname linux \
 -p 8080:8080 -e DISPLAY=___.___.___.___:0.0  \
 --mount type=bind,source=/c/temp/code-con/settings/vscode-settings.json,target=/home/user/.config/Code/User/settings.json \
 --mount type=bind,source=/c/temp/code-con/settings/code-server-settings.json,target=/home/user/.local/share/code-server/User/settings.json \
--v /c/temp/docker/code-con/src:/home/user/src \
+-v /c/temp/code-con/src:/home/user/src \
 mcolebrook/code-con
 ```
 
