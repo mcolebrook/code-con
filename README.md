@@ -78,9 +78,9 @@ xhost +
 docker run --rm -it --name code-con --hostname linux \
 --cap-add=SYS_ADMIN \
 -p 8080:8080 -e DISPLAY=host.docker.internal:0.0  \
--v /tmp/code-con/github/src:/home/user/src \
 --mount type=bind,source=/tmp/code-con/github/settings/vscode-settings.json,target=/home/user/.config/Code/User/settings.json \
 --mount type=bind,source=/tmp/code-con/github/settings/code-server-settings.json,target=/home/user/.local/share/code-server/User/settings.json \
+-v /tmp/code-con/github/src:/home/user/src \
 mcolebrook/code-con
 ```
 
