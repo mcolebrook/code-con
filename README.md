@@ -53,7 +53,7 @@ Or just invoke image `mcolebrook/code-con` from [Docker Hub](https://hub.docker.
 
 ### Windows
 
-> Note: we consider that you cloned the project is located within `c:\temp`. If not, please change directory accordingly. Please, remember to put the right **IP address** (fill in the `DISPLAY` option).
+> Note: we consider that you cloned the project in `c:\temp`. If not, please change directory accordingly. Besides, please remember to put the right **IP address** (fill in the `DISPLAY` option).
 
 ```
 docker run --rm -it --name code-con --hostname linux \
@@ -68,7 +68,7 @@ mcolebrook/code-con
 
 ### Mac
 
-> Note: we consider that you cloned the project is located within `\tmp`. If not, please change directory accordingly.
+> Note: we consider that you cloned the project in `\tmp`. If not, please change directory accordingly.
 
 ```
 xhost +
