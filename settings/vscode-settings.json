@@ -16,5 +16,6 @@
     "**/node_modules/**": true
   },
   "github.gitAuthentication": false,
-  "git.terminalAuthentication": false
+  "git.terminalAuthentication": false,
+  "editor.minimap.enabled": false
 }
