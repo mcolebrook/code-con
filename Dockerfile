@@ -91,6 +91,10 @@ RUN code --extensions-dir .config/Code/extensions --install-extension ms-vscode.
     #&& sh -c 'echo "export $(dbus-launch)" >> /home/${USERNAME}/.bashrc' 
     #&& sh -c 'echo "export "$(dbus-launch)"; export NSS_USE_SHARED_DB=ENABLED" >> /home/${USERNAME}/.bashrc' 
 
+# remove unnecessary tools to prevent cyberattacks
+# https://www.docker.com/wp-content/uploads/2022/04/cheat-sheet-docker-snyk-log4shell.pdf
+RUN sudo apt remove wget -y
+
 WORKDIR $HOME/src
 
 ENTRYPOINT [ "/usr/local/share/init-dbus.sh" ]
