@@ -12,8 +12,9 @@
 
 - Headless server: run app with X in a remote server.
 - Reproducible science: pack all tools and data needed for a experiment along with the IDE in order to re-run it or do a step-by-step execution.
+- Cybersecurity: you can run and test apps and libraries within a secure container without affecting your host system.
 - Edit, compile and run any source code with just attaching the folder to a Docker volume.
-- Distribute a full IDE version with all components (compiler, debugger, extensiones, etc) already installed.
+- Distribute your app image along with a full IDE version with all components (compiler, debugger, extensiones, etc) already installed.
 - Change some packages installed in this image in order to switch to other languages (Python, R, Javascript, etc).
 - In Windows, you may want to run, test or debug your app against Linux libraries without using WSL.
 
@@ -92,6 +93,12 @@ If you get any trouble, please refer to the following blog [[1](http://mamykin.c
 vscode.sh
 ```
 
+If you want to start editing inside the default folder location (`src`) just type:
+
+```
+vscode.sh .
+```
+
 ## Running CDR code-server
 
 ```
@@ -99,6 +106,12 @@ code-server.sh
 ```
 
 Then, go to the browser and type: `<YOUR IP ADDRESS>:8080` (Windows) or `localhost:8080`(Mac)
+
+If you want to start editing inside the default folder location (`src`) just type:
+
+```
+code-server.sh .
+```
 
 > Note: If you are under Windows 8.x, get the right IP address using: `docker-machine ip`
 
