@@ -87,7 +87,11 @@ COPY --chown=user:user scripts/*.sh scripts/
 RUN code --extensions-dir .config/Code/extensions --install-extension ms-vscode.cpptools \
     && mkdir -p .config/code-server .local/share/code-server/User \
     && chmod a+x scripts/*.sh \
-    && sh -c 'echo "eval \`dbus-launch --auto-syntax\`" >> /home/${USERNAME}/.bashrc' 
+    && sh -c 'echo "eval \`dbus-launch --auto-syntax\`" >> /home/${USERNAME}/.bashrc'
+    
+    # test out this new line in next build
+    #&& sh -c 'echo "export DONT_PROMPT_WSL_INSTALL=1" >> /home/${USERNAME}/.bashrc' 
+    
     #&& sh -c 'echo "export $(dbus-launch)" >> /home/${USERNAME}/.bashrc' 
     #&& sh -c 'echo "export "$(dbus-launch)"; export NSS_USE_SHARED_DB=ENABLED" >> /home/${USERNAME}/.bashrc' 
 
